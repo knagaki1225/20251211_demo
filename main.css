@@ -1,0 +1,8 @@
+:root {
+  --main-color: #2DB584; /* メインカラー*/
+  --sub-color: #449872; /* サブカラー*/
+  --back-color: #FFFCF9;
+  --font-normal: #535353; /* 文字カラー*/
+  --font-bold: #464646;/* 太字カラー*/
+  --text-white-color: #F8F8F8; /* ホワイトテキストカラー*/
+}
