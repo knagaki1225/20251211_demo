@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>書評の登録</title>
+    <link rel="stylesheet" href="../css/books/review-form.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header class="signup-header">
+        <a href="../books/isbn-search.html" class="back-link">&lt;&nbsp;&nbsp;もどる</a>
+        <div class="step-indicator">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-label">書籍の登録</div>
+            </div>
+            <div class="step-line-box">
+                <div class="step-line"></div>
+            </div>
+            <div class="step active">
+                <div class="step-number">2</div>
+                <div class="step-label">書評の入力</div>
+            </div>
+            <div class="step-line-box">
+                <div class="step-line"></div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-label">内容の確認</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <div class="current-step-title">
+                <span>02</span>
+                <h2>書評の登録</h2>
+            </div>
+            <div class="info-box">
+                <p class="book-review">ここでは、読んでみて感じたことを、あなたの
+                    言葉で自由に書いてください。</p>
+                <p class="book-review">「どんな気持ちになったか」
+                    「どの場面が心に残ったか」
+                    「読み終えたあとにどんな余韻が残ったか」など、
+                    思いついたことをそのまま綴っていただいて
+                    大丈夫です。</p>
+                <p class="book-review">また、文庫Xは作品の招待を伏せたまま読書を
+                    楽しむ企画です。
+                    そのため、以下の<span class="text-bold">注意事項</span>に注意して、書評を
+                    お書きください。</p>
+                <p class="book-review">もし投稿内容が禁止事項に反している場合、
+                    一次審査の段階で掲載を見送らせていただくことがあります。</p>
+
+                <div class="forbidden-box">
+                    <div class="info-box-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>投稿時の禁止事項</h3>
+                    </div>
+                    <div style="display: block;">
+                        <div class="forbidden-review">
+                            <img src="../img/book.png" alt="">
+                            <div class="forbidden-text">
+                                <h4>本のタイトルや著者名を書く</h4>
+                                <p>書名や著者名は書評に記入しないでください。</p>
+                            </div>
+                        </div>
+                        <div class="forbidden-review">
+                            <img src="../img/not_people.png">
+                            <div class="forbidden-text">
+                                <h4>他の人を傷つける言葉を書く</h4>
+                                <p>誹謗中傷や攻撃的な言葉遣いは避け、敬意をもって
+                                    感想を共有しましょう。</p>
+                            </div>
+                        </div>
+                        <div class="forbidden-review">
+                            <img src="../img/face.png">
+                            <div class="forbidden-text">
+                                <h4>不適切・過激な表現を使う</h4>
+                                <p>公序良俗に反する言葉や、暴力的・性的な内容は
+                                    投稿できません。</p>
+                            </div>
+                        </div>
+                        <div class="forbidden-review">
+                            <img src="../img/people.png">
+                            <div class="forbidden-text">
+                                <h4>個人情報（名前・連絡先など）を書く</h4>
+                                <p>プライバシー保護のため、ご自身や他者の個人
+                                    情報を記載しないでください。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form id="signup-form">
+                    <div class="form-group bio-wrapper">
+                        <label for="account-id">書評タイトル<span>（タイトルは20文字以内）</span></label>
+                        <input type="text" id="account-id" name="account-id" value="素晴らしい作品です">
+                        <div class="char-count"><span>9</span>/20文字</div>
+                    </div>
+                    <div class="form-group bio-wrapper bio-bottom">
+                        <label for="bio">書評内容<span>（内容は300文字～500文字内）</span></label>
+                        <textarea id="bio" name="bio" rows="6">
+これは、生まれながらにして背負った宿命から逃れ、ひたすら「美」を追求し続けた、ある男の壮大な一代記です。
+
+物語の主人公は、全く異なる世界にルーツを持ちながら、伝統芸能の舞台で女形として頂点を目指します。由緒ある家に生まれ育った同世代の仲間との出会いは、彼にとって師であり、ライバルであり、深く影響を与え合う運命の絆となります。
+
+栄光の陰には、常に世間の目、スキャンダル、そして自らの血族との複雑な関係といった**「影」が付きまといます。しかし、人生の苦難や葛藤をすべて芸に昇華させ、観客を魅了する圧倒的な熱量と才能**は、読む者の魂を揺さぶります。
+
+伝統と革新、孤独と共鳴、そして男が命を賭して到達した究極の表現。800ページを超えるボリュームの中に、人間の業と愛、そして「国を代表する宝」となるべく己のすべてを捧げた芸術家の真実が詰まっています。読了後、深い余韻が残る傑作です。
+                        </textarea>
+                        <div class="char-count"><span id="current-count">393</span>/500文字</div>
+                    </div>
+                    <div class="btn-shadow">
+                        <a href="" id="temp-save-btn" class="btn btn-register">一時保存</a>
+                    </div>
+                </form>
+                <div class="text-keep-box">
+                    <p class="text-keep">一時保存されました</p>
+                    <p class="text-keep">マイページから内容の確認や編集を続けることができます</p>
+                </div>
+            </div>
+            <div class="btn-review-box">
+                <div class="btn-shadow">
+                    <a href="isbn-search.html" class="btn-review btn-register  btn-color-left">書籍登録へ戻る</a>
+                </div>
+                <div class="btn-shadow">
+                    <a href="Book-reivew.html" id="confirm-btn" class="btn-review btn-register btn-color-right">確認へ</a>
+                </div>
+            </div>
+            <footer>@copylite</footer>
+
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // ==========================================
+            // 要素の取得
+            // ==========================================
+            const titleInput = document.getElementById('account-id'); // 書評タイトル入力欄
+            const bioInput = document.getElementById('bio');       // 書評内容入力欄
+            const titleCountSpan = document.querySelector('.form-group .char-count span'); // タイトル文字数
+            const currentCount = document.getElementById('current-count'); // 内容文字数
+
+            // ボタン
+            const confirmBtn = document.querySelector('a[href="Book-reivew.html"]'); // 確認へ
+            const tempSaveBtn = document.querySelector('a[href="signup.html"]'); // 一時保存
+
+            // ==========================================
+            // 1. ページ読み込み時にlocalStorageから復元 (reviewDataが存在する場合)
+            // ==========================================
+            const savedReviewDataJson = localStorage.getItem('reviewData');
+
+            if (savedReviewDataJson) {
+                try {
+                    const savedReviewData = JSON.parse(savedReviewDataJson);
+
+                    // JSON形式: { reviewTitle: "...", reviewContent: "...", ... } から復元
+                    if (titleInput && savedReviewData.reviewTitle) {
+                        titleInput.value = savedReviewData.reviewTitle;
+                    }
+                    if (bioInput && savedReviewData.reviewContent) {
+                        bioInput.value = savedReviewData.reviewContent;
+                    }
+
+                    // 文字数カウント表示を更新
+                    if (titleInput) titleInput.dispatchEvent(new Event('input'));
+                    if (bioInput) bioInput.dispatchEvent(new Event('input'));
+
+                } catch (e) {
+                    console.error("データの読み込みに失敗しました", e);
+                }
+            }
+
+            // ==========================================
+            // 2. 文字数カウント機能
+            // ==========================================
+            // 書評内容（300〜500文字）
+            if (bioInput && currentCount) {
+                bioInput.addEventListener('input', function () {
+                    const length = bioInput.value.length;
+                    currentCount.textContent = length;
+                    if (length > 500 || length < 300) {
+                        currentCount.style.color = 'red';
+                    } else {
+                        currentCount.style.color = '#888';
+                    }
+                });
+            }
+
+            // 書評タイトル（1〜20文字）
+            if (titleInput && titleCountSpan) {
+                titleInput.addEventListener('input', function () {
+                    const len = titleInput.value.length;
+                    titleCountSpan.textContent = len;
+                    if (len > 20 || len < 1) {
+                        titleCountSpan.style.color = 'red';
+                    } else {
+                        titleCountSpan.style.color = '#888';
+                    }
+                });
+            }
+
+            // ==========================================
+            // 3. データ保存用の関数 (指定のJSON形式で保存)
+            // ==========================================
+            function saveReviewDataToLocal() {
+                // 既存のLocalStorageから書籍情報等を取得
+                // キー名は指定された snake_case のものを使用
+                const existingProjectId = localStorage.getItem('projectId');
+                const existingIsbn = localStorage.getItem('book_isbn');
+                const existingTitle = localStorage.getItem('book_title');
+                const existingPublisher = localStorage.getItem('book_publisher');
+                const existingAuthor = localStorage.getItem('book_author');
+
+                // 指定されたJSON形式でオブジェクトを作成
+                const dataToSave = {
+                    projectId: existingProjectId ? Number(existingProjectId) : 1, // 数値に変換。なければ仮で1
+                    bookIsbn: existingIsbn || "",
+                    bookTitle: existingTitle || "",
+                    bookPublisher: existingPublisher || "",
+                    bookAuthor: existingAuthor || "",
+                    reviewTitle: titleInput.value,  // 入力欄の値
+                    reviewContent: bioInput.value   // 入力欄の値
+                };
+
+                // 'reviewData' というキーでJSON文字列として保存
+                localStorage.setItem('reviewData', JSON.stringify(dataToSave));
+            }
+
+            // ==========================================
+            // 4. 「確認へ」ボタンクリック時の処理
+            // ==========================================
+            if (confirmBtn) {
+                confirmBtn.addEventListener('click', function (e) {
+                    e.preventDefault(); // 画面遷移を一旦停止
+
+                    // バリデーション（入力チェック）
+                    const reviewTitle = titleInput.value;
+                    const reviewContent = bioInput.value;
+
+                    if (!reviewTitle.trim()) {
+                        alert('書評タイトルを入力してください。');
+                        return;
+                    }
+                    if (reviewTitle.length < 1 || reviewTitle.length > 20) {
+                        alert(`書評タイトルは1〜20文字で入力してください。（現在: ${reviewTitle.length}文字）`);
+                        return;
+                    }
+
+                    const length = reviewContent.length;
+                    if (length < 300 || length > 500) {
+                        alert(`書評内容は300文字以上500文字以内で入力してください。（現在: ${length}文字）`);
+                        return;
+                    }
+
+                    // 保存実行
+                    saveReviewDataToLocal();
+
+                    // 確認画面へ遷移
+                    window.location.href = this.href;
+                });
+            }
+
+            // ==========================================
+            // 5. 「一時保存」ボタンクリック時の処理
+            // ==========================================
+            if (tempSaveBtn) {
+                tempSaveBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // バリデーションなしで保存
+                    saveReviewDataToLocal();
+
+                    alert('書評の内容を一時保存しました。');
+
+                    // 遷移（マイページ等に戻る場合）
+                    window.location.href = this.href;
+                });
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // localStorageから書籍情報を取得（snake_caseのキー）
+            const title = localStorage.getItem("book_title");
+            const author = localStorage.getItem("book_author");
+            const publisher = localStorage.getItem("book_publisher");
+
+            // 画像URLは前の画面の実装次第ですが、ここでは 'book_cover' と仮定
+            // もし bookData オブジェクトとして保存されている場合はそちらを参照してください
+            const cover = localStorage.getItem("book_cover") || "../img/book.png";
+
+            // 表示先の要素を取得
+            // ※HTML内に id="disp-title" 等の要素があるか確認してください
+            // 現在のHTMLにはこれらのIDを持つ要素が見当たりませんが、
+            // ページ上部に書籍情報を表示するエリアがある場合のために残しています。
+
+            // const dispTitle = document.getElementById("disp-title");
+            // const dispAuthor = document.getElementById("disp-author");
+            // const dispPublisher = document.getElementById("disp-publisher");
+            // const dispCover = document.getElementById("disp-cover");
+
+            // if (dispTitle && title) dispTitle.textContent = title;
+            // if (dispAuthor && author) dispAuthor.textContent = author;
+            // if (dispPublisher && publisher) dispPublisher.textContent = publisher;
+            // if (dispCover && cover) dispCover.src = cover;
+        });
+    </script>
+</body>
+
+</html>

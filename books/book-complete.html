@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登録完了</title>
+    <link rel="stylesheet" href="../css/books/book-complete.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header class="signup-header">
+        <h1>
+            <div class="header-title-area" style="text-align: center; margin-bottom: 20px;">
+                <h1 style="font-size: 30px; color: #333;">
+                    <i class="fas fa-check-circle" style="color: white; "></i>
+                </h1>
+            </div>
+            登録完了
+        </h1>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <div class="check-img-div">
+                <img src="../img/check.png" class="check-img" alt="">
+            </div>
+            <div class="complete-text">
+                <h2>登録完了しました</h2>
+                <div class="text-gap">
+                    <p class="intro-text">ご投稿いただきありがとうございます。</p>
+                    <p class="intro-text">一次審査の開始までしばらくお待ちください。</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <div class="container">
+                    <h3>今後の書評の流れ</h3>
+                    <div class="underline"></div>
+                </div>
+                <!-- ステップフロー -->
+                <div class="timeline-container">
+                    <div class="timeline-step">
+                        <div class="step-marker">
+                            <div class="circle green">1</div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="step-content">
+                            <h3>一次審査</h3>
+                            <p>投稿された書評の一次審査が行われます。</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step">
+                        <div class="step-marker">
+                            <div class="circle gray">2</div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="step-content">
+                            <h3>二次審査</h3>
+                            <p>一次審査を通過した書評の二次審査が行われます。</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step">
+                        <div class="step-marker">
+                            <div class="circle gray">3</div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="step-content">
+                            <h3>ノミネート発表</h3>
+                            <p>二次審査を通過した10冊の書評が書店にて発売されます。</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step">
+                        <div class="step-marker">
+                            <div class="circle gray">4</div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="step-content">
+                            <h3>大賞発表</h3>
+                            <p>店舗で発売された10冊のうち、最も人気だった本が<strong>文庫X</strong>として発売されます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="countdown-container">
+                <div class="label-text">一次審査開始まで</div>
+                <div class="timer-display">
+                    <div class="time-group">
+                        <span id="days" class="number">--</span>
+                        <span class="unit">日</span>
+                    </div>
+                    <div class="time-group">
+                        <span id="hours" class="number">--</span>
+                        <span class="unit">時間</span>
+                    </div>
+                    <div class="time-group">
+                        <span id="minutes" class="number">--</span>
+                        <span class="unit">分</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a href="#" class="btn btn-next-step" id="btn-next-step">
+                    マイページへ
+                </a>
+            </div>
+            <footer>@copylite</footer>
+        </div>
+    </main>
+
+    <script>
+        let countdownInterval;
+
+        document.addEventListener('DOMContentLoaded', async function () {
+            // localStorageからprojectIdを取得
+            const reviewDataJson = localStorage.getItem('reviewData');
+            
+            if (!reviewDataJson) {
+                alert('プロジェクト情報が見つかりません。');
+                return;
+            }
+
+            const reviewData = JSON.parse(reviewDataJson);
+            const projectId = reviewData.projectId;
+
+            if (!projectId) {
+                alert('プロジェクトIDが見つかりません。');
+                return;
+            }
+
+            try {
+                // APIから締切日時を取得
+                const response = await fetch(`http://localhost:8080/api/projects/confirm/${projectId}`);
+                
+                if (response.ok) {
+                    const deadlineString = await response.text();
+                    const deadline = new Date(deadlineString.replace(/"/g, ''));
+                    
+                    // カウントダウンを開始
+                    updateCountdown(deadline);
+                    countdownInterval = setInterval(() => updateCountdown(deadline), 60000); // 1分ごとに更新
+                    console.log(deadline);
+                } else {
+                    console.error('締切日時の取得に失敗しました');
+                    document.getElementById('days').textContent = '--';
+                    document.getElementById('hours').textContent = '--';
+                    document.getElementById('minutes').textContent = '--';
+                }
+            } catch (error) {
+                console.error('APIエラー:', error);
+                document.getElementById('days').textContent = '--';
+                document.getElementById('hours').textContent = '--';
+                document.getElementById('minutes').textContent = '--';
+            }
+
+            // マイページへボタンのイベントリスナー
+            document.getElementById('btn-next-step').addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // localStorageをすべてクリア
+                localStorage.clear();
+                
+                // マイページへ遷移
+                window.location.href = 'mypage.html';
+            });
+        });
+
+        // カウントダウンを更新する関数
+        function updateCountdown(deadline) {
+            const now = new Date();
+            const diff = deadline - now;
+
+            if (diff <= 0) {
+                // 締切を過ぎた場合
+                document.getElementById('days').textContent = '0';
+                document.getElementById('hours').textContent = '0';
+                document.getElementById('minutes').textContent = '0';
+                if (countdownInterval) {
+                    clearInterval(countdownInterval);
+                }
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+        }
+    </script>
+    
+</body>
+
+</html>

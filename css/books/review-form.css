@@ -1,0 +1,421 @@
+body {
+    margin: 0;
+    background-color: var(--main-color);
+    color: var(--font-normal);
+}
+
+/* === ヘッダー === */
+.signup-header {
+    color: var(--text-white-color);
+    padding: 20px;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.back-link {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    color: var(--text-white-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* === ステップインジケーター === */
+.step-indicator {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    margin-top: 3rem;
+}
+
+.step {
+    text-align: center;
+    opacity: 0.6;
+}
+
+.step.active {
+    opacity: 1.0;
+}
+
+.step-number {
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 38px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: var(--text-white-color);
+    font-weight: bold;
+    margin: 0 auto;
+    font-size: 1.4rem;
+}
+
+.step.active .step-number {
+    background-color: var(--text-white-color);
+    color: var(--main-color);
+}
+
+.step-label {
+    font-size: 0.8rem;
+    margin-top: 5px;
+    color: var(--text-white-color);
+}
+
+
+
+/* === フォームコンテナ === */
+#signup-form {
+    margin-top: 100px;
+}
+
+.form-container {
+    background-color: #FFFCF9;
+    border-radius: 30px 30px 0px 0px;
+    padding: 40px 10px;
+    margin-top: 2rem;
+}
+
+/* === 現在のステップタイトル === */
+.current-step-title {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-left: 1cqw;
+    padding-left: 15px;
+}
+
+.current-step-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 45%;
+    transform: translateY(-50%);
+    height: 90%;
+    /* タイトルの高さに合わせて調整 */
+    width: 5px;
+    /* 棒の太さ */
+    background-color: var(--main-color);
+    /* ユーザー指定のピンク色 */
+    border-radius: 3px;
+}
+
+.current-step-title span {
+    background-color: transparent;
+    color: var(--main-color);
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.current-step-title h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--font-normal);
+}
+
+/* === ISBN説明ボックス === */
+.step-line-box {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    height: 35px;
+}
+
+.step-line {
+    width: 3rem;
+    height: 1px;
+    background-color: var(--text-white-color);
+}
+
+.book-review {
+    margin-bottom: 2rem;
+    padding: 0 0.8rem;
+}
+
+.info-box {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 25px;
+    border: 1.5px #F4F4F4 solid;
+}
+
+.info-box-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.info-box-title i {
+    color: var(--font-normal);
+    font-size: 1.7em;
+    margin-top: 3px;
+}
+
+.text-bold {
+    font-weight: 900;
+}
+
+.info-box-title h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--font-normal);
+}
+
+.info-box .book-review {
+    font-size: 0.9rem;
+    color: var(--font-normal);
+    line-height: 1.6;
+}
+
+/* 禁止事項説明 */
+
+.forbidden-box {
+    background-color: #FFE9E9;
+    border-radius: 10px;
+    padding: 11px;
+    margin-bottom: 25px;
+}
+
+.forbidden-review {
+    display: flex;
+    margin-top: 1.5rem;
+}
+
+.forbidden-review img {
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    width: 2rem;
+    height: 1.5rem;
+}
+
+.forbidden-review h4 {
+    margin: 0;
+}
+
+.forbidden-review p {
+    font-size: small;
+    color: var(--font-normal);
+}
+
+/* form-css */
+
+.form-container {
+    background-color: var(--back-color);
+    border-radius: 30px 30px 0px 0px;
+    margin-top: 2rem;
+}
+
+
+
+/* === フォームグループ === */
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--font-normal);
+}
+
+.form-group span {
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: #888;
+}
+
+/* === 入力フィールド全般 === */
+input[type="text"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    /* paddingを含めて幅100%にする */
+    font-size: 1rem;
+    color: --var(--font-normal);
+    background-color: var(--text-white-color);
+}
+
+/* フィールドにフォーカスしたときのスタイル */
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus {
+    outline: none;
+    border-color: var(--main-color);
+    box-shadow: 0 0 0 2px rgba(240, 98, 146, 0.2);
+}
+
+
+/* テキストエリアのスタイル */
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    background-color: var(--text-white-color);
+    font-family: inherit;
+    /* フォントを統一 */
+    resize: vertical;
+    /* 縦方向のリサイズを許可 */
+    min-height: 120px;
+    /* 画像の比率に合わせて高さを設定 */
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--main-color);
+    box-shadow: 0 0 0 2px rgba(240, 98, 146, 0.2);
+}
+
+/* 自己紹介 */
+.bio-wrapper {
+    position: relative;
+    /* 子要素の絶対位置の基準 */
+}
+
+.bio-bottom {
+    margin-bottom: 100px;
+}
+
+.bio-wrapper textarea {
+    width: 100%;
+    height: 450px;
+    box-sizing: border-box;
+    color: --var(font-normal);
+}
+
+.bio-wrapper .char-count {
+    position: absolute;
+    bottom: -20px;
+    /* テキストエリアの外に出す */
+    right: 0;
+    font-size: 0.85em;
+    color: #888;
+}
+
+
+/* === ボタン共通スタイル === */
+.btn {
+    display: flex;
+    justify-content: center;
+    /* テキストを水平方向の中央に配置 */
+    align-items: center;
+    /* テキストを垂直方向の中央に配置 */
+    width: 80%;
+    height: 50px;
+    border-radius: 30px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: 1.5px solid var(--main-color);
+}
+
+/*  一時保存ボタン  */
+.btn-login {
+    background-color: var(--main-color);
+    color: #F8F8F8;
+}
+
+/* 新規登録ボタン (線のみ) */
+.btn-register {
+    background-color: #fff;
+    color: var(--font-normal);
+    border: 2px solid var(--main-color);
+}
+
+.btn-shadow {
+    display: flex;
+    /* aタグの幅に合わせて影をつけたい場合に推奨 */
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-shadow .btn {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* 外側影 */
+}
+
+.text-keep-box {
+    margin-top: 1rem;
+}
+
+.text-keep {
+    margin: 0;
+    padding: 0;
+    font-size: 0.7rem;
+    color: var(--font-normal);
+    text-align: center;
+}
+
+/* 二つのボタン */
+.btn-review-box {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.btn-review {
+    display: flex;
+    justify-content: center;
+    /* テキストを水平方向の中央に配置 */
+    align-items: center;
+    /* テキストを垂直方向の中央に配置 */
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: 1.5px solid var(--main-color);
+}
+
+/* 右ボタン：背景色あり */
+.btn-color-right {
+    color: var(--text-white-color);
+    background-color: var(--main-color);
+    font-size: 1.1rem;
+}
+
+/* 左ボタン：白背景 */
+.btn-color-left {
+    color: var(--main-color);
+    background-color: var(--back-color);
+    font-size: 1rem;
+}
+
+
+/* フッター */
+footer {
+    background-color: var(--back-color);
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 2rem;
+    color: #777777;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.8rem;
+    margin: 0;
+}
