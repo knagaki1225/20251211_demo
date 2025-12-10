@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>システムデモ版 ページ一覧</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #0056b3;
+            border-bottom: 3px solid #0056b3;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-left: 5px solid #28a745;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        li:hover {
+            background-color: #e9ecef;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            display: block;
+            font-size: 1.1em;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+        .description {
+            display: block;
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>デモ版 ページ一覧</h1>
+
+    <ul>
+        <li>
+            <a href="https://knagaki1225.github.io/20251211_demo/auth/login">1. ログイン画面 (書評投稿用)</a>
+            <span class="description">書評投稿専用のログインページ</span>
+        </li>
+        <li>
+            <a href="https://knagaki1225.github.io/20251211_demo/auth/login?projectId=1">2. ログイン画面 (マイページ用)</a>
+            <span class="description">マイページアクセス用のログインページ</span>
+        </li>
+        <li>
+            <a href="https://knagaki1225.github.io/20251211_demo/auth/signup">3. 新規登録画面</a>
+            <span class="description">アカウントの新規登録ページ</span>
+        </li>
+        <li>
+            <a href="https://knagaki1225.github.io/20251211_demo/auth/security">4. セキュリティーコード表示</a>
+            <span class="description">パスワード変更用のセキュリティーコードを表示するページ</span>
+        </li>
+        <li>
+            <a href="https://knagaki1225.github.io/20251211_demo/books/isbn-search.html">5. 書籍登録ページ</a>
+            <span class="description">isbnコードをカメラで読み取るページ</span>
+        </li>
+        <li>
+            <a href="https://knagaki1225.github.io/20251211_demo/books/review-form.html">6. 書評登録ページ</a>
+            <span class="description">書評タイトル・書評本文を登録するページ</span>
+        </li>
+        <li>
+            <a href="https://knagaki1225.github.io/20251211_demo/books/mypage">7. マイページ</a>
+            <span class="description">自分で投稿した書評等を確認するページ</span>
+        </li>
+        <li>
+            <a href="https://knagaki1225.github.io/20251211_demo/fansite/top">8. ファンサイトトップページ</a>
+            <span class="description">システム全体のお知らせ等を表示するトップページ</span>
+        </li>
+        <li>
+            <a href="https://knagaki1225.github.io/20251211_demo/plan/first-ex">9. 企画トップページ</a>
+            <span class="description">投票前段階の企画ページ</span>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
