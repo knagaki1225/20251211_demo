@@ -1,7 +1,7 @@
 :root {
-  --main-color: #2DB584;
+  --main-color: #338895;
   /* メインカラー*/
-  --sub-color: #449872;
+  --sub-color: #338895;
   /* サブカラー*/
   --back-color: #FFFCF9;
   --font-normal: #535353;
@@ -40,7 +40,7 @@
 
 /* ===== 緑ブロック ===== */
 .footer-menu {
-  background: #3b8f6f;
+  background: var(--sub-color);
   padding: 0;
 }
 

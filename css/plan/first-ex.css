@@ -644,10 +644,10 @@
         }
 
         /* ===== 緑ブロック ===== */
-        .footer-menu {
+        /* .footer-menu {
             background: #3b8f6f;
             padding: 0;
-        }
+        } */
 
         .footer-menu-item-top {
             display: flex;
